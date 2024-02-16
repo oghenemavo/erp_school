@@ -67,6 +67,7 @@
                             </div>
 
                             <input type="hidden" name="url" id="url" value="{{ URL::to('/') }}">
+
                             @if (moduleStatusCheck('MultiBranch') && isset($branches))
                                 <div class="row mb-30">
                                     <div class="col-lg-3">
@@ -99,8 +100,8 @@
                                             {{ in_array('staff_no', $is_required) ? '*' : '' }} </label>
                                         <input
                                             class="primary_input_field form-control{{ $errors->has('staff_no') ? ' is-invalid' : '' }}"
-                                            type="text" name="staff_no"
-                                            value="{{ $max_staff_no != '' ? $max_staff_no + 1 : 1 }}" readonly>
+                                            type="number" name="staff_no" min="{{ $max_staff_no + 1 }}"
+                                            value="{{ $max_staff_no != '' ? $max_staff_no + 1 : 1 }}">
 
 
                                         @if ($errors->has('staff_no'))
