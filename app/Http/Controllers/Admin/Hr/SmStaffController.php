@@ -56,7 +56,7 @@ class SmStaffController extends Controller
         try {
 
             $roles = InfixRole::query();
-            $roles->whereNotIn('id', [2, 3]);
+            $roles->whereNotIn('id', [1, 2, 3]);
             if (Auth::user()->role_id != 1) {
                 $roles->whereNotIn('id', [1]);
             }
