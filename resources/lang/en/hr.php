@@ -126,7 +126,7 @@ return [
     'bank_account_details'=>'Bank Account Details',
     'joining_letter'=>'Joining Letter',
     'custom_field'=>'Custom Field',
-    'save_staff'=>'Save Staff',
+    'save_staff'=>'Add Staff',
     'other_documents'=>'Other Document',
     'staff_information'=>'Staff Information',
     'location'=>'Location',
