@@ -1,0 +1,22 @@
+{
+  "version": "8.0.0",
+  "release_date": "24/11/2023",
+  "required_manual_update": false,
+  "min": "7.2.1",
+  "migrations": [
+      "packages/larabuild/pagebuilder/database/migrations/2022_12_29_072511_create_pages_table.php",
+      "database/migrations/2023_09_22_1346345_update_v721_to_v8_migrations.php",
+      "database/migrations/2023_09_26_094106_create_home_sliders_table.php",
+      "database/migrations/2023_09_27_065756_create_sm_expert_teachers_table.php",
+      "database/migrations/2023_09_28_054606_create_sm_photo_galleries_table.php",
+      "database/migrations/2023_09_29_052332_create_sm_video_galleries_table.php",
+      "database/migrations/2023_09_30_040648_create_front_results_table.php",
+      "database/migrations/2023_10_03_054024_create_front_exam_routines_table.php",
+      "database/migrations/2023_10_03_054032_create_front_class_routines_table.php",
+      "database/migrations/2023_10_06_024910_create_front_academic_calendars_table.php",
+      "database/migrations/2023_10_11_053735_create_sm_news_comments_table.php",
+      "database/migrations/2023_11_03_110411_edulia_demo_pages.php"
+  ],
+  "url": "https://spondonit.com/contact",
+  "notes": "This is new features and bug fixing update."
+}
