@@ -472,8 +472,12 @@ class DatatableQueryController extends Controller
 
     public function getStaffList(Request $request)
     {  
+        $admin_type = 'super_admin';
         try {
-            if (Auth::user()->role_id == 1) {
+            // non_super_admin or super_admin 
+            $admin_type = $request->query('admin_type');
+
+            if (Auth::user()->role_id == 1 && $admin_type == 'super_admin') {
                 $staffs = SmStaff::query();
                 
                 $staffs->withOutGlobalScope(ActiveStatusSchoolScope::class)->where('school_id', Auth::user()->school_id)

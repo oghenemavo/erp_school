@@ -231,7 +231,7 @@
                      processing: true,
                      serverSide: true,
                      "ajax": $.fn.dataTable.pipeline( {
-                           url: "{{route('staff_directory_ajax')}}",
+                           url: "{{route('staff_directory_ajax', ['admin_type' => 'non_super_admin'])}}",
                            data: { 
                             role_id  : $('#role_id').val(),
                             staff_no : $('#staff_no').val(),
