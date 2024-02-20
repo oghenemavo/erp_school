@@ -51,6 +51,31 @@ class SmStaffController extends Controller
         $this->URL = url('/');
     }
 
+    public function teacherList(Request $request)
+    {
+        try {
+
+            $roles = InfixRole::query();
+            $roles->whereNotIn('id', [2, 3]);
+            if (Auth::user()->role_id != 1) {
+                $roles->whereNotIn('id', [1]);
+            }
+            $roles = $roles->where('is_saas', 0)
+                ->where('active_status', '=', '1')
+                ->where(function ($q) {
+                    $q->where('school_id', Auth::user()->school_id)->orWhere('type', 'System');
+                })
+                ->orderBy('name', 'asc')
+                ->get();
+
+            return view('backEnd.humanResource.teacher_list', compact('roles'));
+
+        } catch (\Exception $e) {           
+            Toastr::error('Operation Failed', 'Failed');
+            return redirect()->back();
+        }
+    }
+
     public function staffList(Request $request)
     {
         try {

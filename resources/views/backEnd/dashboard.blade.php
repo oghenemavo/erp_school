@@ -79,7 +79,7 @@
                     @endif
                     @if (userPermission('number-of-teacher'))
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="{{ route('staff_directory') }}" class="d-block">
+                            <a href="{{ route('staff_teachers') }}" class="d-block">
                                 <div class="white-box single-summery">
                                     <div class="d-flex justify-content-between">
                                         <div>
