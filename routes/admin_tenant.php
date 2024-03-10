@@ -1383,6 +1383,9 @@ Route::group(['middleware' => ['XSS', 'subscriptionAccessUrl']], function () {
         Route::get('staff/teachers', ['as' => 'staff_teachers', 'uses' => 'Admin\Hr\SmStaffController@teacherList'])->middleware('userRolePermission:staff_directory');
         Route::get('staff-directory-ajax', ['as' => 'staff_directory_ajax', 'uses' => 'DatatableQueryController@getStaffList'])->middleware('userRolePermission:staff_directory');
         
+        Route::get('students/parents', ['as' => 'students_parents', 'uses' => 'Admin\Hr\SmStaffController@parentList'])->middleware('userRolePermission:staff_directory');
+        Route::get('parents-directory-ajax', ['as' => 'parents_directory_ajax', 'uses' => 'DatatableQueryController@getParentList'])->middleware('userRolePermission:staff_directory');
+
         Route::get('teachers-directory-ajax', ['as' => 'teachers_directory_ajax', 'uses' => 'DatatableQueryController@getTeachersList'])->middleware('userRolePermission:staff_directory');
 
 

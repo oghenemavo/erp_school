@@ -99,7 +99,7 @@
                     @if (userPermission('number-of-parent'))
                         {{-- mt-30-md --}}
                         <div class="col-lg-3 col-md-6 col-sm-6">
-                            <a href="#" class="d-block">
+                            <a href="{{ route('students_parents') }}" class="d-block">
                                 <div class="white-box single-summery">
                                     <div class="d-flex justify-content-between">
                                         <div>

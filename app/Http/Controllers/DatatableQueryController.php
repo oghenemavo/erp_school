@@ -39,6 +39,8 @@ use Illuminate\Support\Facades\Config;
 use App\Scopes\ActiveStatusSchoolScope;
 use App\Scopes\StatusAcademicSchoolScope;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+
 
 class DatatableQueryController extends Controller
 {
@@ -611,6 +613,20 @@ class DatatableQueryController extends Controller
                     return $btn;
                 })
                 ->rawColumns(['action', 'switch'])
+                ->make(true);
+        } catch (\Throwable $th) {
+            Toastr::error('Operation Failed', 'Failed');
+            return redirect()->back();
+        }
+    }
+
+    public function getParentList(Request $request)
+    {
+        try {
+            $parents = DB::table('sm_parents')->where('active_status', 1)->where('school_id', Auth::user()->school_id);
+
+            return Datatables::of($parents)
+                ->addIndexColumn()
                 ->make(true);
         } catch (\Throwable $th) {
             Toastr::error('Operation Failed', 'Failed');
